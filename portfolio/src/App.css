@@ -1,0 +1,16 @@
+html{
+    scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    font-family: 'Poppins',sans-serif;
+
+}
+
+section{
+    height: 100vh;
+    scroll-snap-align: center;
+}
