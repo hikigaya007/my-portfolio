@@ -1,12 +1,13 @@
 
 import './App.css'
+import Home from './components/Home'
 
 function App() {
 
   return (
     
-    <div className='w-full bg-slate-900 text-white flex  flex-col justify-center items-center'>
-      <section>Main page</section>
+    <div className='w-full bg-slate-900 text-white'>
+      <section><Home/></section>
       <section>Parallax</section>
       <section>skills</section>
       <section>projects parallax</section>
