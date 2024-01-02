@@ -1,6 +1,9 @@
 import React, { useState } from 'react'
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
+import {motion} from 'framer-motion';
+import profile from '../assets/profile.jpeg'
+import '../App.css'
 
 function Home() {
 
@@ -9,32 +12,66 @@ function Home() {
     const handleClick = ()=>{
         setCollapseNav(!collapseNav);
     }
-    const stylesIcon = {
-        color: collapseNav ? 'black' : 'white',
-    
-      };
+
+
+    const links = [
+        {
+            title:'Home',
+            link:'/'
+        },{
+            title:'About',
+            link:'/'
+        },{
+            title:'Projects',
+            link:'/'
+        },{
+            title:'Contact Me',
+            link:'/',
+        }
+    ];
+      
 
   return (
-    <div className='flex bg-slate-900  text-white justify-between max-w-7xl mx-auto  h-[80px] items-center'>
+    <>
+    {/* Navbar */}
+    <div className='flex bg-slate-900  text-white justify-between max-w-7xl mx-auto  h-[80px] items-center p-2 xl:p-0'>
         <span>Logo</span>
-        <ul className='md:flex md:gap-6 hidden '>
+        <ul className='md:flex md:gap-6 hidden text-lg'>
             <li><a href="/">Home</a></li>
             <li><a href="/">About</a></li>
             <li><a href="/">Projects</a></li>
             
         </ul>
-        <div className='md:hidden cursor-pointer z-10'
-        onClick={handleClick}><FontAwesomeIcon icon={faBars} size='lg' style={stylesIcon} /></div>
+        <div className='md:hidden cursor-pointer z-10 bg-white p-2 rounded-full w-[36px] flex items-center justify-center'
+        onClick={handleClick}><FontAwesomeIcon icon={faBars} size='lg' style={{color:'black'}} /></div>
         
         {collapseNav && <ul className='bg-white  text-black absolute top-0 left-0 flex flex-col h-screen w-full justify-center items-center'>
-                <li className='py-6 text-2xl'>Home</li>
-                <li className='py-6 text-2xl'>About</li>
-                <li className='py-6 text-2xl'>Projects</li>
-                <li className='py-6 text-2xl'>Contact Me</li>
+                {links.map((value , index) =>{
+                    return(
+                        <li className='py-6 text-3xl hover:scale-105 cursor-pointer transition-all duration-200' key={index}>{value.title}</li>
+                    )
+                })}
             </ul>}
         
         <a href="/" className='hidden md:block bg-white text-black p-1 rounded-full'>Contact Me</a>
+
     </div>
+
+        <div className='flex flex-col items-center max-w-6xl md:items-center md:flex-row md:justify-center lg:gap-32 mx-auto mt-5 lg:h-[80%] md:h-[80%]'>
+            <div className='custom-animation'><img src={profile} alt="Profile Picture" className=' size-40 md:size-80 sm:size-60 rounded-full shadow-purple-400 shadow-lg ' /></div>
+            <div>
+                    <h2 className="font-semibold text-4xl sm:text-5xl md:text-6xl">
+                            Hi! I'm <span className=" text-violet-400">Bijo </span>Prasad
+                            <br />Full Stack
+                            <span className=" text-violet-400"> Developer</span>
+                    </h2>
+                    
+            </div>
+        </div>
+
+    </>
+
+    
   )
 }
 
