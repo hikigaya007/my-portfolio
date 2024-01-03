@@ -1,6 +1,7 @@
 
 import './App.css'
 import Home from './components/Home'
+import Parallax from './components/Parallax'
 
 function App() {
 
@@ -8,7 +9,7 @@ function App() {
     
     <div className='w-full bg-slate-900 text-white'>
       <section><Home/></section>
-      <section>Parallax</section>
+      <section><Parallax title='Skills And Qualification'/></section>
       <section>skills</section>
       <section>projects parallax</section>
       <section>prj 1</section>

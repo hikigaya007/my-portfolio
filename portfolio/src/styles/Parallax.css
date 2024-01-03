@@ -1,0 +1,11 @@
+.mountain{
+    background-image: url('../assets/mountains.png');
+    background-position: bottom;
+    height: 100%;
+    width: 100%;
+    background-size: cover;
+    position: absolute;
+    overflow: hidden;
+    
+}
+

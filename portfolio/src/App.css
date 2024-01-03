@@ -29,3 +29,12 @@ section{
         transform: translateY(-20px) ;
     }
 }
+.custom-animation-text{
+    animation: float-text 1s infinite ease alternate;
+}
+
+@keyframes float-text{
+    to{
+        transform: translateY(5px) ;
+    }
+}

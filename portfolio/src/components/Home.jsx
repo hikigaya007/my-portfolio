@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
-import { faBars } from '@fortawesome/free-solid-svg-icons';
+import { faBars , faChevronDown} from '@fortawesome/free-solid-svg-icons';
 import {motion} from 'framer-motion';
 import profile from '../assets/profile.jpeg'
 import '../App.css'
@@ -46,7 +46,7 @@ function Home() {
         <div className='md:hidden cursor-pointer z-20 bg-white p-2 rounded-full w-[36px] flex items-center justify-center'
         onClick={handleClick}><FontAwesomeIcon icon={faBars} size='lg' style={{color:'black'}} /></div>
         
-        {collapseNav && <ul className='bg-white z-10 text-black absolute top-0 left-0 flex flex-col h-screen w-full justify-center items-center'>
+        {collapseNav && <ul className='bg-white z-10 md:hidden text-black absolute top-0 left-0 flex flex-col h-screen w-full justify-center items-center'>
                 {links.map((value , index) =>{
                     return(
                         <li className='py-6 text-3xl hover:scale-105 cursor-pointer transition-all duration-200' key={index}>{value.title}</li>
@@ -74,6 +74,11 @@ function Home() {
                         My <span className="text-violet-400"> favorite tech</span> includes JavaScript , NextJs
                         ,TailwindCSS , Node.js + Express.js & MongoDB!
                     </p>
+                    <div className='flex flex-col mt-4'>
+                        <span className='text-center'>Scroll Down</span>
+                        <span className='custom-animation-text text-center'><FontAwesomeIcon icon={faChevronDown} /></span>
+                    </div>
+                    
                     
             </div>
         </div>
